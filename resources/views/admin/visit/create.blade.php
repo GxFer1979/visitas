@@ -7,9 +7,11 @@
     <div class="container-xl">
                 <div class="card">
         <visit-form
-            :action="'{{ url('admin/visits') }}'"
+          :action="'{{ url('admin/visits')'"
+          {{-- :action="'{{ url('test') }}'"--}}
             :state="{{$state->toJson()}}"
             :dependency="{{$dependency->toJson()}}"
+
 
             v-cloak
             inline-template>

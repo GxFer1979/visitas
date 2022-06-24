@@ -51,7 +51,7 @@
     <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
         <div class="input-group input-group--custom">
             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-            <datetime v-model="form.Meeting_Date" :config="datetimePickerConfig" v-validate="'required|date_format:yyyy-MM-dd HH:mm:ss'" class="flatpickr" :class="{'form-control-danger': errors.has('Meeting_Date'), 'form-control-success': fields.Meeting_Date && fields.Meeting_Date.valid}" id="Meeting_Date" name="Meeting_Date" placeholder="{{ trans('brackets/admin-ui::admin.forms.select_date_and_time') }}"></datetime>
+            <datetime v-model="form.Meeting_Date" :config="datetimePickerConfig"  class="flatpickr" :class="{'form-control-danger': errors.has('Meeting_Date'), 'form-control-success': fields.Meeting_Date && fields.Meeting_Date.valid}" id="Meeting_Date" name="Meeting_Date" placeholder="{{ trans('brackets/admin-ui::admin.forms.select_date_and_time') }}"></datetime>
         </div>
         <div v-if="errors.has('Meeting_Date')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('Meeting_Date') }}</div>
     </div>

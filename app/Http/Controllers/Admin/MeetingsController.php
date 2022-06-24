@@ -141,6 +141,8 @@ class MeetingsController extends Controller
         return view('admin.meeting.edit', [
             'meeting' => $meeting,
         ]);
+
+
     }
 
     /**
@@ -163,12 +165,14 @@ class MeetingsController extends Controller
        // Update changed values Meeting
         $meeting->update($sanitized);
 
-        if ($request->ajax()) {
-            return [
-                'redirect' => url('admin/meetings'),
-                'message' => trans('brackets/admin-ui::admin.operation.succeeded'),
-            ];
-        }
+
+        $audiencia = Meeting::create($sanitized);
+        // return $visit;
+         if ($request->ajax()) {
+             return ['redirect' => url('admin/meetings'), 'audiencia' => $audiencia['CI'] ];
+         }
+
+
 
         return redirect('admin/meetings');
     }

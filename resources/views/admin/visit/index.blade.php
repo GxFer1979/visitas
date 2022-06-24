@@ -14,8 +14,9 @@
                 <div class="card">
                     <div class="card-header">
                        {{-- <i class="fa fa-align-justify"></i> {{ trans('admin.visit.actions.index')--}}
-                       <center><H4>ADMINISTRACION DE VISITAS</H4></center>
-
+                       <center><H2>ADMINISTRACION DE VISITAS</H2></center>
+                       <br>
+                       <h7>*PANEL PARA REGISTRAR LAS VISITAS A LA INSTITUCIÓN</h7>
                         <a class="btn btn-primary btn-spinner btn-sm pull-right m-b-0" href="{{ url('admin/visits/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.visit.actions.create') }}</a>
                     </div>
                     <div class="card-body" v-cloak>
@@ -40,6 +41,18 @@
                                     </div>
                                 </div>
                             </form>
+
+                            <br>
+
+                            <div class ="row">
+
+                                <div class="form-group col-sm-3">
+
+                                    <a  class="btn btn-success rounded-pill">  <i class="fa" :class="submiting ? 'fa-spinner' : 'fa fa-external-link-square'"></i></a> Registrar Salida
+
+
+
+                               </div>
 
                             <table class="table table-hover table-listing">
                                 <thead>
@@ -97,7 +110,8 @@
                                         <p style="background-color: green; color:white;font-weight:bold;;border-radius:5px;">&nbsp;&nbsp;@{{  item.state.name}}&nbsp;&nbsp;</p>
                                     </td>
                                     <td v-else-if="item.state.name == 'En Espera' ">
-                                        <p style="background-color: red; color:white;font-weight:bold;;border-radius:5px;">&nbsp;&nbsp;@{{  item.state.name}}&nbsp;&nbsp;</p>
+
+                                        <p style="background-color: red;color: white;font-weight: bold;border-radius: 5px;font-size: 13px;">&nbsp;&nbsp;@{{  item.state.name}}&nbsp;&nbsp;</p>
                                     </td>
 
                                         <td>@{{ item.dependency.name }}</td>

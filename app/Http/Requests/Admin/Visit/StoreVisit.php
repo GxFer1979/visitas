@@ -51,13 +51,9 @@ class StoreVisit extends FormRequest
     public function messages()
     {
         return [
-            'CI.required' => 'Debe cargar el número de cedula de identidad.',
-            'CI.integer' => 'El número de cedula debe ser numerico, sin puntos.',
-            'name.required' => 'Debe cargar el numero de cedula, el nombre se obtiene de manera automatica.',
-            // 'user.required' => 'Debe cargar el numero de cedula, el usuario se obtiene de manera automatica.',
-            'dependency.required' => 'Debe cargar el numero de cedula, la dependencia se obtiene de manera automatica.',
-            'fone.required' => 'Debe cargar el numero de telefono.',
-            'problem.required' => 'Debe cargar el incoveniente que esta presentando.',
+
+            'Reason.required' => 'Debe cargar el numero de cedula, el nombre se obtiene de manera automatica.',
+
 
             //'ruc' => 'Cargue RUC',
         ];

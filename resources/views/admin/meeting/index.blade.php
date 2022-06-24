@@ -14,9 +14,13 @@
                 <div class="card">
                     <div class="card-header">
                         {{--<i class="fa fa-align-justify"></i> {{ trans('admin.meeting.actions.index') --}}
-                        <center><H4>ADMINISTRACION DE AUDIENCIAS</H4></center>
+                        <center><h2>ADMINISTRACION DE AUDIENCIAS</h2></center>
+                       <br>
 
-                        <a class="btn btn-primary btn-spinner btn-sm pull-right m-b-0" href="{{ url('admin/meetings/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.meeting.actions.create') }}</a>
+                        <h7> *PANEL GENERAL DE AUDIENCIAS </h7>
+
+                        <a class="btn btn-primary  btn-sm pull-right m-b-0" href="{{ url('admin/meetings/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.meeting.actions.create') }}</a>
+
                     </div>
                     <div class="card-body" v-cloak>
                         <div class="card-block">
@@ -27,6 +31,7 @@
                                             <input class="form-control" placeholder="{{ trans('brackets/admin-ui::admin.placeholder.search') }}" v-model="search" @keyup.enter="filter('search', $event.target.value)" />
                                             <span class="input-group-append">
                                                 <button type="button" class="btn btn-primary" @click="filter('search', search)"><i class="fa fa-search"></i>&nbsp; {{ trans('brackets/admin-ui::admin.btn.search') }}</button>
+
                                             </span>
                                         </div>
                                     </div>
@@ -40,6 +45,25 @@
                                     </div>
                                 </div>
                             </form>
+                           <br>
+
+                            <div class ="row">
+
+                                <div class="form-group col-sm-3">
+                                   <a  class="btn btn-dark rounded-pill">  <i class="fa" :class="submiting ? 'fa-spinner' : 'fa fa-sign-in'"></i></a>  Registrar Entrada
+                               </div>
+                               <div class="form-group col-sm-3">
+                                  <a  class="btn btn-primary rounded-pill">  <i class="fa" :class="submiting ? 'fa-spinner' : 'fa fa-refresh'"></i></a> Reprogramar Audiencia
+                               </div>
+                               <div class="form-group col-sm-3">
+                                  <a  class="btn btn-danger rounded-pill">  <i class="fa" :class="submiting ? 'fa-spinner' : 'fa fa-remove'"></i></a>  Cancelar Audiencia
+                               </div>
+                               <div class="form-group col-sm-3">
+                                  <a  class="btn btn-success rounded-pill">  <i class="fa" :class="submiting ? 'fa-spinner' : 'fa fa-clock-o'" ></i></a>  Registrar Salida
+                               </div>
+                                </div>
+
+                              <br>
 
                             <table class="table table-hover table-listing">
                                 <thead>
@@ -117,27 +141,26 @@
                                                 <div class="col-auto" v-if="item.state.name == 'Agendada'">
 
 
-                                                    <div class="col-auto" v-if="item.Entry_Datetime != NULL">
+                                                    <div style="display: flex; justify-content: space-between;" v-if="item.Entry_Datetime != NULL">
 
-                                                        <a :href="item.resource_url + '/salida'" class="btn btn-success rounded-pill">  <i class="fa" :class="submiting ? 'fa-spinner' : 'fa fa-clock-o'" title="Registrar Salida"></i></a>
+                                                        <div><a :href="item.resource_url + '/salida'" class="btn btn-success rounded-pill">  <i class="fa" :class="submiting ? 'fa-spinner' : 'fa fa-clock-o'" title="Registrar Salida"></i></a></div>
 
                                                       {{-- <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/salida'" title="{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button">Salida</a>--}}
-                                                      <a :href="item.resource_url + '/reprogramar'" class="btn btn-primary rounded-pill">  <i class="fa" :class="submiting ? 'fa-spinner' : 'fa fa-refresh'" title="Reprogramar Audiencia"></i></a>
+                                                      <div> <a :href="item.resource_url + '/reprogramar'" class="btn btn-primary rounded-pill">  <i class="fa" :class="submiting ? 'fa-spinner' : 'fa fa-refresh'" title="Reprogramar Audiencia"></i></a></div>
 
                                                         {{--  <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/reprogramar'" title="{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button">Reprogramar Audiencia</a>--}}
-                                                        <a :href="item.resource_url + '/cancelar'" class="btn btn-danger rounded-pill">  <i class="fa" :class="submiting ? 'fa-spinner' : 'fa fa-remove'" title="Cancelar Audiencia"></i></a>
+                                                        <div>  <a :href="item.resource_url + '/cancelar'" class="btn btn-danger rounded-pill">  <i class="fa" :class="submiting ? 'fa-spinner' : 'fa fa-remove'" title="Cancelar Audiencia"></i></a></div>
 
                                                           {{--<a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/cancelar'" title="{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button">Cancelar Audiencia</a>--}}
 
 
                                                         </div>
 
+                                                        <div style="display: flex; justify-content: space-between;" v-else>
+                                                        <div>   <a :href="item.resource_url + '/entrada'" class="btn btn-dark rounded-pill ">  <i class="fa" :class="submiting ? 'fa-spinner' : 'fa fa-sign-in'" title="Registrar Entrada"></i></a></div>
 
-
-                                                    <div class="col-auto" v-else>
-                                                        <a :href="item.resource_url + '/entrada'" class="btn btn-dark rounded-pill">  <i class="fa" :class="submiting ? 'fa-spinner' : 'fa fa-sign-in'" title="Registrar Entrada"></i></a>
-                                                        <a :href="item.resource_url + '/reprogramar'" class="btn btn-primary rounded-pill">  <i class="fa" :class="submiting ? 'fa-spinner' : 'fa fa-refresh'" title="Reprogramar Audiencia"></i></a>
-                                                        <a :href="item.resource_url + '/cancelar'" class="btn btn-danger rounded-pill">  <i class="fa" :class="submiting ? 'fa-spinner' : 'fa fa-remove'" title="Cancelar Audiencia"></i></a>
+                                                            <div><a :href="item.resource_url + '/reprogramar'" class="btn btn-primary rounded-pill ">  <i class="fa" :class="submiting ? 'fa-spinner' : 'fa fa-refresh'" title="Reprogramar Audiencia"></i></a></div>
+                                                                <div> <a :href="item.resource_url + '/cancelar'" class="btn btn-danger rounded-pill">  <i class="fa" :class="submiting ? 'fa-spinner' : 'fa fa-remove'" title="Cancelar Audiencia"></i></a></div>
 
                                                         {{--<a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/entrada'" title="{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button">Registrar Entrada</a>--}}
                                                          {{--<a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/reprogramar'" title="{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button">Reprogramar Audiencia</a>--}}
