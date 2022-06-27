@@ -137,11 +137,9 @@ class MeetingsController extends Controller
     {
         $this->authorize('admin.meeting.edit', $meeting);
 
-
         return view('admin.meeting.edit', [
             'meeting' => $meeting,
         ]);
-
 
     }
 
@@ -156,29 +154,28 @@ class MeetingsController extends Controller
     {
         // Sanitize input
 
-
         $sanitized = $request->getSanitized();
 
         $sanitized ['Entry_Datetime']=NULL;
 
 
        // Update changed values Meeting
-        $meeting->update($sanitized);
+         $meeting->update($sanitized);
+        //$audiencia = Meeting::create($sanitized);
+     //   $audiencia = Meeting::create($sanitized);
+        //  $audiencia = $meeting->CI;
 
-
-        $audiencia = Meeting::create($sanitized);
+      //  $audiencia = CI();
         // return $visit;
          if ($request->ajax()) {
-             return ['redirect' => url('admin/meetings'), 'audiencia' => $audiencia['CI'] ];
+             return ['redirect' => url('admin/meetings')];//,'audiencia' => $audiencia['CI'] ];
          }
+
 
 
 
         return redirect('admin/meetings');
     }
-
-
-
 
 
     public function reprogramar(Meeting $meeting)
@@ -201,13 +198,10 @@ class MeetingsController extends Controller
             }
             else {
 
-
             }
 
         // Update changed values Meeting
         $meeting->update($sanitized);
-
-
         if ($request->ajax()) {
             return [
                 'redirect' => url('admin/meetings'),

@@ -68,7 +68,7 @@ Vue.component('meeting-form', {
         onSuccess: function onSuccess(data) {
             this.$modal.show('dialog', {
                 title: 'Importante!',
-                text: 'Audiencia con el Ciudadano con Documento de Identidad Nº <strong>'+ data.audiencia + '</strong> agendada correctamente!!!',
+                text:'Audiencia Agendada correctamente!!',//'Audiencia con el Ciudadano con Documento de Identidad Nº <strong>'+ data.audiencia + '</strong> agendada correctamente!!!',
                 buttons: [
                     //{ title: 'No, cancel.' },
                     {
