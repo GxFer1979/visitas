@@ -152,31 +152,23 @@ class MeetingsController extends Controller
      */
     public function update(UpdateMeeting $request, Meeting $meeting)
     {
-        // Sanitize input
-
+         //return $request;
         $sanitized = $request->getSanitized();
-
         $sanitized ['Entry_Datetime']=NULL;
-
-
        // Update changed values Meeting
-         $meeting->update($sanitized);
+      //a return $sanitized;
+       $meeting->update($sanitized);
+
         //$audiencia = Meeting::create($sanitized);
      //   $audiencia = Meeting::create($sanitized);
-        //  $audiencia = $meeting->CI;
-
+         // $audiencia = data.audiencia;
       //  $audiencia = CI();
         // return $visit;
          if ($request->ajax()) {
-             return ['redirect' => url('admin/meetings')];//,'audiencia' => $audiencia['CI'] ];
+             return ['redirect' => url('admin/meetings'),'audiencia' =>  $request['CI'] ];
          }
-
-
-
-
         return redirect('admin/meetings');
     }
-
 
     public function reprogramar(Meeting $meeting)
     {
@@ -232,9 +224,6 @@ class MeetingsController extends Controller
 
         return redirect('admin/meetings');
     }
-
-
-
     public function salida(UpdateMeeting $request, Meeting $meeting)
     {
         // Sanitize input
@@ -254,8 +243,6 @@ class MeetingsController extends Controller
 
         return redirect('admin/meetings');
     }
-
-
     /**
      * Remove the specified resource from storage.
      *

@@ -1,9 +1,7 @@
 import AppForm from '../app-components/Form/AppForm';
-
 Vue.component('meeting-form', {
     mixins: [AppForm],
     props:['state'],
-
     data: function() {
         return {
             form: {
@@ -17,9 +15,9 @@ Vue.component('meeting-form', {
                 Entry_Datetime:  '' ,
                 Exit_Datetime:  '' ,
                 state:  '' ,
-
             }
-        }
+
+                  }
     },
 
     methods: {
@@ -33,12 +31,7 @@ Vue.component('meeting-form', {
             this.form.lon = this.coordinates.lng.toString();
             //this.form.casa = "demo";
             //console.log(this.tipos);
-
-
-
-
         },
-
 
         findData: function() {
             axios
@@ -53,7 +46,6 @@ Vue.component('meeting-form', {
                             buttons: [{ title: "Ok" }]
                         });
                     }
-
                     this.form.Names = data.nombres;
                     this.form.First_Names= data.apellido;
                     /*this.form.gender = data.sexo;
@@ -63,12 +55,10 @@ Vue.component('meeting-form', {
                     this.form.birthdate = date.toISOString().split("T")[0];*/
                 });
         },
-
-
         onSuccess: function onSuccess(data) {
             this.$modal.show('dialog', {
                 title: 'Importante!',
-                text:'Audiencia Agendada correctamente!!',//'Audiencia con el Ciudadano con Documento de Identidad Nº <strong>'+ data.audiencia + '</strong> agendada correctamente!!!',
+                text:'Audiencia con el Ciudadano con Documento de Identidad Nº <strong>'+ data.audiencia + '</strong> agendada correctamente!!!',
                 buttons: [
                     //{ title: 'No, cancel.' },
                     {
@@ -92,7 +82,6 @@ Vue.component('meeting-form', {
             //this.show = true
             //this.$notify({ type: 'success', title: 'IMPORTANTE',position:"top center", width:"200px", duration: 10000, text: 'El ticket '+data.ticket+' ha sido creado correctamente!!!'});
             if (data.redirect) {
-
               console.log(data.message);
               //this.show = true
               this.audiencia = data.CI
