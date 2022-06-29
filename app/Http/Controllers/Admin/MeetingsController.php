@@ -99,7 +99,6 @@ class MeetingsController extends Controller
 
        // $meeting = Meeting::create($sanitized);
 
-
         $audiencia = Meeting::create($sanitized);
         // return $visit;
          if ($request->ajax()) {
@@ -108,7 +107,6 @@ class MeetingsController extends Controller
        // if ($request->ajax()) {
        //     return ['redirect' => url('admin/meetings'),  'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
        // }
-
         return redirect('admin/meetings');
     }
 
@@ -140,7 +138,6 @@ class MeetingsController extends Controller
         return view('admin.meeting.edit', [
             'meeting' => $meeting,
         ]);
-
     }
 
     /**
