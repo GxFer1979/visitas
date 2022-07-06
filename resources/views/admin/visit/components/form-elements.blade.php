@@ -4,7 +4,7 @@
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('CI'), 'has-success': fields.CI && fields.CI.valid }">
     <label for="CI" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.visit.columns.CI') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-        <input type="text"  @change="findData" v-model="form.CI" v-validate="'required|integer'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('CI'), 'form-control-success': fields.CI && fields.CI.valid}" id="CI" name="CI" placeholder="{{ trans('admin.visit.columns.CI') }}">
+        <input type="text"  @change="findData" v-model="form.CI"  @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('CI'), 'form-control-success': fields.CI && fields.CI.valid}" id="CI" name="CI" placeholder="{{ trans('admin.visit.columns.CI') }}">
         <div v-if="errors.has('CI')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('CI') }}</div>
     </div>
 </div>
@@ -14,7 +14,7 @@
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('Full_Name'), 'has-success': fields.Full_Name && fields.Full_Name.valid }">
     <label for="Full_Name" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.visit.columns.Full_Name') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-        <input type="text" readonly v-model="form.Full_Name" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('Full_Name'), 'form-control-success': fields.Full_Name && fields.Full_Name.valid}" id="Full_Name" name="Full_Name" placeholder="{{ trans('admin.visit.columns.Full_Name') }}">
+        <input type="text" readonly v-model="form.Full_Name"  @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('Full_Name'), 'form-control-success': fields.Full_Name && fields.Full_Name.valid}" id="Full_Name" name="Full_Name" placeholder="{{ trans('admin.visit.columns.Full_Name') }}">
         <div v-if="errors.has('Full_Name')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('Full_Name') }}</div>
     </div>
 </div>
@@ -32,7 +32,7 @@
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('Reason'), 'has-success': fields.Reason && fields.Reason.valid }">
     <label for="Reason" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.visit.columns.Reason') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-            <textarea v-model="form.Reason" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('Reason'), 'form-control-success': fields.Reason && fields.Reason.valid}" id="Reason" name="Reason" placeholder="{{ trans('admin.visit.columns.Reason') }}">  </textarea>
+            <textarea v-model="form.Reason" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('Reason'), 'form-control-success': fields.Reason && fields.Reason.valid}" id="Reason" name="Reason" placeholder="{{ trans('admin.visit.columns.Reason') }}">  </textarea>
         <div v-if="errors.has('Reason')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('Reason') }}</div>
     </div>
 </div>
@@ -40,7 +40,7 @@
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('Observation'), 'has-success': fields.Observation && fields.Observation.valid }">
     <label for="Observation" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.visit.columns.Observation') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-        <textarea v-model="form.Observation" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('Observation'), 'form-control-success': fields.Observation && fields.Observation.valid}" id="Observation" name="Observation" placeholder="{{ trans('admin.visit.columns.Observation') }}"> </textarea>
+        <textarea v-model="form.Observation"  @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('Observation'), 'form-control-success': fields.Observation && fields.Observation.valid}" id="Observation" name="Observation" placeholder="{{ trans('admin.visit.columns.Observation') }}"> </textarea>
         <div v-if="errors.has('Observation')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('Observation') }}</div>
     </div>
 </div>
