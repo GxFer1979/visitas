@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Dependency\BulkDestroyDependency;
 use App\Http\Requests\Admin\Dependency\DestroyDependency;
@@ -18,8 +19,10 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+
 class DependenciesController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -110,6 +113,8 @@ class DependenciesController extends Controller
     public function edit(Dependency $dependency)
     {
         $this->authorize('admin.dependency.edit', $dependency);
+
+
         return view('admin.dependency.edit', [
             'dependency' => $dependency,
         ]);

@@ -125,6 +125,7 @@ class MeetingsController extends Controller
 
         // TODO your code goes here
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -135,9 +136,12 @@ class MeetingsController extends Controller
     public function edit(Meeting $meeting)
     {
         $this->authorize('admin.meeting.edit', $meeting);
+
+
         return view('admin.meeting.edit', [
             'meeting' => $meeting,
         ]);
+
 
     }
 
@@ -156,18 +160,27 @@ class MeetingsController extends Controller
         $sanitized = $request->getSanitized();
 
         $sanitized ['Entry_Datetime']=NULL;
+
+
        // Update changed values Meeting
         $meeting->update($sanitized);
 
 
-        //$audiencia = Meeting::create($sanitized);
+        $audiencia = Meeting::create($sanitized);
         // return $visit;
          if ($request->ajax()) {
-             return ['redirect' => url('admin/meetings'), 'audiencia' => $request['CI'] ];
+             return ['redirect' => url('admin/meetings'), 'audiencia' => $audiencia['CI'] ];
          }
+
+
 
         return redirect('admin/meetings');
     }
+
+
+
+
+
     public function reprogramar(Meeting $meeting)
     {
         $this->authorize('admin.meeting.edit', $meeting);
@@ -187,6 +200,7 @@ class MeetingsController extends Controller
             $sanitized ['Entry_Datetime']=Carbon::now();
             }
             else {
+
 
             }
 

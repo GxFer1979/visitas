@@ -29,8 +29,8 @@ class StoreMeeting extends FormRequest
             'CI' => ['required', 'integer'],
             'Names' => ['required', 'string'],
             'First_Names' => ['required', 'string'],
-            'Reason' => ['required', 'string'],
-            'Observation' => ['nullable'],
+            'Reason' => ['nullable', 'string'],
+            'Observation' => ['nullable', 'string'],
             'With_whom' => ['required', 'string'],
             'Meeting_Date' => ['required', 'date'],
             'Entry_Datetime' => ['nullable'],
@@ -39,28 +39,6 @@ class StoreMeeting extends FormRequest
 
         ];
     }
-
-    public function messages()
-    {
-        return [
-
-            'CI.required' => 'Debe cargar número de cédula',
-            'Names.required'=> 'Debe cargar Nombres',
-            'First_Names.required'=> 'Debe cargar Apellidos',
-            'Reason.required' => 'Debe cargar motivo de la Audiencia',
-            'With_whom.required'=>'Debe cargar con quien es la Audiencia solicitada',
-            'Meeting_Date.required'=>'Debe cargar Fecha prevista para la Audiencia',
-
-
-
-
-
-
-
-            //'ruc' => 'Cargue RUC',
-        ];
-    }
-
 
     /**
     * Modify input data

@@ -33,7 +33,7 @@ class StoreVisit extends FormRequest
             'First_Name' => ['nullable','string'],
             'Second_Name' => ['nullable','string'],
             'Reason' => ['required', 'string'],
-            'Observation' => ['nullable'],
+            'Observation' => ['required', 'string'],
             'Entry_Datetime' =>['nullable','date'],
             'Exit_Datetime' => ['nullable','date'],
             'state_id' => ['nullable'],
@@ -52,14 +52,7 @@ class StoreVisit extends FormRequest
     {
         return [
 
-            'CI.required' => 'Debe cargar número de cédula',
-            'Full_Name.required'=> 'Debe cargar Nombres',
-            'First_Surname.required'=> 'Debe cargar Apellidos',
-            'Reason.required' => 'Debe cargar motivo de la Visita',
-
-
-
-
+            'Reason.required' => 'Debe cargar el numero de cedula, el nombre se obtiene de manera automatica.',
 
 
             //'ruc' => 'Cargue RUC',

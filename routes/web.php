@@ -97,7 +97,7 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
         Route::prefix('visits')->name('visits/')->group(static function() {
             Route::get('/',                                             'VisitsController@index')->name('index');
-            Route::get('/create',                                       'VisitsController@create')->name('create');
+        //    Route::get('/create',                                       'VisitsController@create')->name('create');
             Route::post('/',                                            'VisitsController@store')->name('store');
             Route::get('/{visit}/edit',                                 'VisitsController@edit')->name('edit');
             Route::post('/bulk-destroy',                                'VisitsController@bulkDestroy')->name('bulk-destroy');
