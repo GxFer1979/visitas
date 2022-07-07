@@ -46,7 +46,7 @@ class StoreMeeting extends FormRequest
 
             'CI.required' => 'Debe cargar número de cédula',
             'Names.required'=> 'Debe cargar Nombres',
-            'First_Names.required'=> 'Debe cargar Apellidos',
+            'First_Names.required'=> 'Debe cargar Apellido',
             'Reason.required' => 'Debe cargar motivo de la Audiencia',
             'With_whom.required'=>'Debe cargar con quien es la Audiencia solicitada',
             'Meeting_Date.required'=>'Debe cargar Fecha prevista para la Audiencia',
