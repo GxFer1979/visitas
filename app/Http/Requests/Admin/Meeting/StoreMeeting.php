@@ -30,7 +30,7 @@ class StoreMeeting extends FormRequest
             'Names' => ['required', 'string'],
             'First_Names' => ['required', 'string'],
             'Reason' => ['nullable', 'string'],
-            'Observation' => ['nullable', 'string'],
+            'Observation' => ['nullable'],
             'With_whom' => ['required', 'string'],
             'Meeting_Date' => ['required', 'date'],
             'Entry_Datetime' => ['nullable'],
@@ -45,6 +45,28 @@ class StoreMeeting extends FormRequest
     *
     * @return array
     */
+
+    public function messages()
+    {
+        return [
+
+            'CI.required' => 'Debe cargar número de cédula',
+            'Names.required'=> 'Debe cargar Nombres',
+            'First_Names.required'=> 'Debe cargar Apellido',
+            'Reason.required' => 'Debe cargar motivo de la Audiencia',
+            'With_whom.required'=>'Debe cargar con quien es la Audiencia solicitada',
+            'Meeting_Date.required'=>'Debe cargar Fecha prevista para la Audiencia',
+
+
+
+
+
+
+
+            //'ruc' => 'Cargue RUC',
+        ];
+    }
+
     public function getSanitized(): array
     {
         $sanitized = $this->validated();
