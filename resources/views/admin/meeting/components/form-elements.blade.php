@@ -56,6 +56,6 @@
         <div v-if="errors.has('Meeting_Date')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('Meeting_Date') }}</div>
     </div>
 </div>
-
+{{-- Hola que tal  --}}
 
 
