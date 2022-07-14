@@ -29,6 +29,10 @@
 </div>
 
 
+
+
+
+
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('Reason'), 'has-success': fields.Reason && fields.Reason.valid }">
     <label for="Reason" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.visit.columns.Reason') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
