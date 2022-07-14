@@ -52,6 +52,16 @@
     <label for="dependency_id" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.visit.columns.dependency_id') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
         {{-- <input type="text" v-model="form.category_id" v-validate="'required|integer'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('category_id'), 'form-control-success': fields.category_id && fields.category_id.valid}" id="category_id" name="category_id" placeholder="{{ trans('admin.detail-help.columns.category_id') }}"> --}}
+
+
+        <multiselect v-model="form.dependency"
+        :options="{{ $dependency->toJson() }}"
+        placeholder="Select Dependency"
+         label="name"
+          track-by="id" :multiple="true">
+        </multiselect>
+
+    {{--
         <multiselect
             v-model="form.dependency"
             :options="dependency"
@@ -62,6 +72,7 @@
             tag-placeholder=""
             placeholder="{{ trans('admin.visit.columns.dependency_id') }}">
         </multiselect>
+        --}}
         <div v-if="errors.has('dependency_id')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('dependency_id') }}</div>
     </div>
 </div>

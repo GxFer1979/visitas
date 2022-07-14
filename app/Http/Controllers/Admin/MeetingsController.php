@@ -225,8 +225,6 @@ class MeetingsController extends Controller
         return redirect('admin/meetings');
     }
 
-
-
     public function salida(UpdateMeeting $request, Meeting $meeting)
     {
         // Sanitize input
