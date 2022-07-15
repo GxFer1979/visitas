@@ -24,6 +24,7 @@
                 <div class="card-header">
                    {{-- <i class="fa fa-plus"></i> {{ trans('admin.visit.actions.create')--}}
                    <center><H4>NUEVA VISITA</H4></center>
+                   <a class="btn btn-primary btn-spinner btn-sm pull-right m-b-0 rounded-pill" href="{{ url('admin/visits') }}" role="button"><i class="fa fa-undo"></i>&nbsp; VOLVER</a><br>
 
 
                 </div>
