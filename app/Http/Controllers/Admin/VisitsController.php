@@ -83,6 +83,17 @@ class VisitsController extends Controller
 
         return view('admin.visit.create', compact('state','dependency'));
     }
+
+    public function createsc()
+    {
+        //$this->authorize('admin.visit.create');
+        $state = State::all();
+        $dependency= Dependency::all();
+
+       // $Entry_Datetime=date('d/m/Y', strtotime($contrato['CliFchCon']));
+
+        return view('admin.visit.createsc', compact('state','dependency'));
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -108,6 +119,43 @@ class VisitsController extends Controller
 //$alumno->telefono = $request->telefono;
 //$alumno->direccion = $request->direccion;
 //$alumno->save();
+
+ //   $visit->save();
+        // Store the Visit
+        $visit = Visit::create($sanitized);
+       // return $visit;
+        if ($request->ajax()) {
+            return ['redirect' => url('admin/visits'), 'visit' => $visit['id'] ];
+        }
+
+
+       // if ($request->ajax()) {
+       //     return ['redirect' => url('admin/visits')], 'visita' => $visit['id']];//'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
+       //  }
+
+        return redirect('admin/visits');
+    }
+
+
+    public function storesc(StoreVisit $request)
+    {
+        // Sanitize input
+        $sanitized = $request->getSanitized();
+        $sanitized ['state_id']= 1;// $request->getStateId();
+        $sanitized ['dependency_id']=  $request->getDependencyId();
+              //  $status->Visit_id = $Visit->id;
+
+   // $visit=new Visit();
+    //$visit->
+    //$visit->$sanitized ['Entry_Datetime']=date('Y-m-d h:y:s');
+
+    $sanitized ['Entry_Datetime']=Carbon::now();
+    //$alumno = Alumno::findOrFail($id);
+    //$alumno->nombre_apellido = $request->nombre_apellido;
+    //$alumno->edad = $request->edad;
+    //$alumno->telefono = $request->telefono;
+    //$alumno->direccion = $request->direccion;
+    //$alumno->save();
 
  //   $visit->save();
         // Store the Visit

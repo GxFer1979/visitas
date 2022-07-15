@@ -83,6 +83,13 @@ class MeetingsController extends Controller
         return view('admin.meeting.create');
     }
 
+    public function createsc()
+    {
+        //$this->authorize('admin.meeting.create');
+
+        return view('admin.meeting.createsc');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -90,6 +97,27 @@ class MeetingsController extends Controller
      * @return array|RedirectResponse|Redirector
      */
     public function store(StoreMeeting $request)
+    {
+        // Sanitize input
+        $sanitized = $request->getSanitized();
+
+        // Store the Meeting
+        $sanitized ['state_id']=3;
+
+       // $meeting = Meeting::create($sanitized);
+
+        $audiencia = Meeting::create($sanitized);
+        // return $visit;
+         if ($request->ajax()) {
+             return ['redirect' => url('admin/meetings'), 'audiencia' => $audiencia['CI'] ];
+         }
+       // if ($request->ajax()) {
+       //     return ['redirect' => url('admin/meetings'),  'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
+       // }
+        return redirect('admin/meetings');
+    }
+
+    public function storesc(StoreMeeting $request)
     {
         // Sanitize input
         $sanitized = $request->getSanitized();

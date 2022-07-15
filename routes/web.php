@@ -98,7 +98,9 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
         Route::prefix('visits')->name('visits/')->group(static function() {
             Route::get('/',                                             'VisitsController@index')->name('index');
             Route::get('/create',                                       'VisitsController@create')->name('create');
+            Route::get('/createsc',                                       'VisitsController@createsc')->name('createsc');
             Route::post('/',                                            'VisitsController@store')->name('store');
+            Route::post('/',                                            'VisitsController@storesc')->name('storesc');
             Route::get('/{visit}/edit',                                 'VisitsController@edit')->name('edit');
             Route::post('/bulk-destroy',                                'VisitsController@bulkDestroy')->name('bulk-destroy');
             Route::post('/{visit}',                                     'VisitsController@update')->name('update');
@@ -133,7 +135,9 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
         Route::prefix('meetings')->name('meetings/')->group(static function() {
             Route::get('/',                                             'MeetingsController@index')->name('index');
             Route::get('/create',                                       'MeetingsController@create')->name('create');
+            Route::get('/createsc',                                       'MeetingsController@createsc')->name('createsc');
             Route::post('/',                                            'MeetingsController@store')->name('store');
+            Route::post('/',                                            'MeetingsController@storesc')->name('storesc');
             Route::get('/{meeting}/edit',                               'MeetingsController@edit')->name('edit');
             Route::post('/bulk-destroy',                                'MeetingsController@bulkDestroy')->name('bulk-destroy');
             Route::post('/{meeting}',                                   'MeetingsController@update')->name('update');

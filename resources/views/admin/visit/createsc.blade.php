@@ -26,10 +26,11 @@
                    <center><H4>NUEVA VISITA</H4></center>
 
 
+
                 </div>
 
                 <div class="card-body">
-                    @include('admin.visit.components.form-elements')
+                    @include('admin.visit.components.form-elementsc')
                 </div>
 
                 <div class="card-footer">
@@ -37,9 +38,7 @@
                         <i class="fa" :class="submiting ? 'fa-spinner' : 'fa-download'"></i>
                         {{ trans('brackets/admin-ui::admin.btn.save') }}
                     </button>
-                    <a href='createsc' class="btn btn-warning rounded-pill"> <i class="fa fa-times" ></i> INTERNET </a>
                 </div>
-
 
             </form>
 
