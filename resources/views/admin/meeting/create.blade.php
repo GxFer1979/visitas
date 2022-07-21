@@ -31,7 +31,7 @@
                         <i class="fa" :class="submiting ? 'fa-spinner' : 'fa-download'"></i>
                         {{ trans('brackets/admin-ui::admin.btn.save') }}
                     </button>
-                    <a href='createsc' class="btn btn-warning rounded-pill"> <i class="fa fa-times" ></i> INTERNET </a>
+                    <a href='createsc' title="acceda aqui cuando no hay internet"> <i class="fa fa-wifi pull-right" style="font-size:25px;color:red"></i></a>
                 </div>
 
             </form>
