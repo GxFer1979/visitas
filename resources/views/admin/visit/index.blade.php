@@ -3,6 +3,7 @@
 @section('title', trans('admin.visit.actions.index'))
 
 @section('body')
+<body onLoad="setTimeout('self.location.reload()', 30000)"></body>
 
     <visit-listing
         :data="{{ $data->toJson() }}"

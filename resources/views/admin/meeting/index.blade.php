@@ -3,6 +3,7 @@
 @section('title', trans('admin.meeting.actions.index'))
 
 @section('body')
+<body onLoad="setTimeout('self.location.reload()', 30000)"></body>
 
     <meeting-listing
         :data="{{ $data->toJson() }}"
