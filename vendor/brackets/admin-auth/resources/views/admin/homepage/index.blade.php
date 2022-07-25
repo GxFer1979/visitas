@@ -7,7 +7,7 @@
 	<script type="text/javascript">
     function Redirect()
     {
-        window.location="http://127.0.0.1:8000/admin/visits";
+        window.location="http://192.168.98.79/admin/visits";
     }
 
     setTimeout('Redirect()', 2000);
