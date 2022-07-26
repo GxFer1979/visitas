@@ -27,6 +27,8 @@ class UpdateDependency extends FormRequest
     {
         return [
             'name' => ['sometimes', 'string'],
+            'ncl' => ['nullable', 'string'],
+            'code' => ['sometimes', 'string'],
             
         ];
     }

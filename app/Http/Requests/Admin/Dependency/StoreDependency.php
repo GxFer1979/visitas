@@ -27,6 +27,8 @@ class StoreDependency extends FormRequest
     {
         return [
             'name' => ['required', 'string'],
+            'ncl' => ['nullable', 'string'],
+            'code' => ['required', 'string'],
             
         ];
     }

@@ -8,6 +8,8 @@ class Dependency extends Model
 {
     protected $fillable = [
         'name',
+        'ncl',
+        'code',
     
     ];
     

@@ -4,7 +4,7 @@
             <li class="nav-title">{{ trans('brackets/admin-ui::admin.sidebar.content') }}</li>
             <li class="nav-item"><a class="nav-link" href="{{ url('admin/visits') }}"><i class="nav-icon icon-home"></i> {{ trans('admin.visit.title') }}</a></li>
            {{-- <li class="nav-item"><a class="nav-link" href="{{ url('admin/states') }}"><i class="nav-icon icon-drop"></i> {{ trans('admin.state.title') }}</a></li>--}}
-            {{-- <li class="nav-item"><a class="nav-link" href="{{ url('admin/dependencies') }}"><i class="nav-icon icon-ghost"></i> {{ trans('admin.dependency.title') }}</a></li>--}}
+            <li class="nav-item"><a class="nav-link" href="{{ url('admin/dependencies') }}"><i class="nav-icon icon-ghost"></i> {{ trans('admin.dependency.title') }}</a></li>
            <li class="nav-item"><a class="nav-link" href="{{ url('admin/meetings') }}"><i class="nav-icon icon-list"></i> {{ trans('admin.meeting.title') }}</a></li>
            {{-- Do not delete me :) I'm used for auto-generation menu items --}}
 

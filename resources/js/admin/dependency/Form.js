@@ -6,6 +6,8 @@ Vue.component('dependency-form', {
         return {
             form: {
                 name:  '' ,
+                ncl:  '' ,
+                code:  '' ,
                 
             }
         }

@@ -25,7 +25,7 @@ class IndexDependency extends FormRequest
     public function rules(): array
     {
         return [
-            'orderBy' => 'in:id,name|nullable',
+            'orderBy' => 'in:id,name,ncl,code|nullable',
             'orderDirection' => 'in:asc,desc|nullable',
             'search' => 'string|nullable',
             'page' => 'integer|nullable',

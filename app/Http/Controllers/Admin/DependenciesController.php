@@ -37,10 +37,10 @@ class DependenciesController extends Controller
             $request,
 
             // set columns to query
-            ['id', 'name'],
+            ['id', 'name', 'ncl', 'code'],
 
             // set columns to searchIn
-            ['id', 'name']
+            ['id', 'name', 'ncl', 'code']
         );
 
         if ($request->ajax()) {
